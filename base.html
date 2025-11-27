@@ -1,0 +1,339 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/fav.png">
+    <!-- Author Meta -->
+    <meta name="author" content="codepixer">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+
+    <!-- Site Title -->
+    <title> Tuition Assistant -INDEX </title>
+
+
+    <!-- ===================================================== CSS ============================================= -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/hexagons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    <script src="{% static 'js/vendor/jquery-2.2.4.min.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+            </script>
+        <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+        <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+        <script src="{% static 'js/easing.min.js' %}"></script>
+        <script src="{% static 'js/hoverIntent.js' %}"></script>
+        <script src="{% static 'js/superfish.min.js' %}"></script>
+        <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+        <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/hexagons.min.js' %}"></script>
+        <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+        <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+        <script src="{% static 'js/waypoints.min.js' %}"></script>
+        <script src="{% static 'js/mail-script.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+</head>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Create two equal columns that floats next to each other */
+    .column1 {
+        float: left;
+        width: 70%;
+        padding: 10px;
+        height: 800px;
+        /* Should be removed. Only for demonstration */
+    }
+
+    .column2 {
+        float: left;
+        width: 30%;
+        padding: 10px;
+        height: 800px;
+        /* Should be removed. Only for demonstration */
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* When the inputs get focus, do something */
+    .form-container input[type=text]:focus,
+    .form-container input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+    /* Set a style for the submit/login button */
+    .form-container .btn {
+        background-color: #76f37a;
+        color: rgb(0, 0, 0);
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 10px;
+        opacity: 0.8;
+    }
+
+    /* Add a red background color to the cancel button */
+    .form-container .cancel {
+        background-color: rgb(241, 36, 36);
+    }
+
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover,
+    .open-button:hover {
+        opacity: 1;
+    }
+
+    /* Add styles to the form container */
+    .form-container {
+        max-width: 300px;
+        padding: 20px;
+        background-color: rgb(255, 255, 255);
+    }
+
+    /* Full-width input fields */
+    .form-container input[type=text],
+    .form-container input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #e6dcdc;
+    }
+
+    .form-container {
+        align-content: center;
+        margin-left: 45px;
+    }
+
+
+
+    /* ================================== log style ====================================*/
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Button used to open the contact form - fixed at the bottom of the page */
+    /* .open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+} */
+
+    /* The popup form - hidden by default */
+    .form-popup {
+        display: none;
+        position: fixed;
+        bottom: 10%;
+        right: 40%;
+        border: 0px solid #f1f1f1;
+        z-index: 9;
+    }
+
+    /* Add styles to the form container */
+    .form-container {
+        max-width: 300px;
+        padding: 10px;
+        background-color: white;
+    }
+
+    /* Full-width input fields */
+    .form-container input[type=text],
+    .form-container input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+    }
+
+    /* When the inputs get focus, do something */
+    .form-container input[type=text]:focus,
+    .form-container input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+    /* Set a style for the submit/login button */
+    .form-container .btn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 10px;
+        opacity: 0.8;
+    }
+
+    /* Add a red background color to the cancel button */
+    .form-container .cancel {
+        background-color: red;
+    }
+
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover,
+    .open-button:hover {
+        opacity: 1;
+    }
+
+    .site-title{
+        background-color: #252525;
+        color: white;
+        line-height: 81px;
+        font-size: 50px;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: fantasy;
+    }
+</style>
+
+<body>
+
+    <script id="62775bf25be5227cef59d78e" src="https://dashboard.chatfuel.com/integration/fb-entry-point.js" async defer></script>
+
+    <!-- ============================================== Script ==================================================================== -->
+
+    <!-- ============================================== Header And Navigation =============================================== -->
+
+
+    <div id="header" id="home">
+        <div class="site-title">
+            <a href="/" class="text-white">
+                <span class="material-icons mr-3" style="font-size: 40px;">
+                    school
+                </span>
+                Tuition Assistance
+            </a>
+        </div>
+        <div id="d-flex justify-content-center" style="display: flex; justify-content: center;">
+            <ul class="nav-menu" style="line-height: 40px;">
+                <li class="menu-active"><a href="index-General.html" style="font-size: 15px">
+                    &nbsp&nbsp&nbsp</a>
+                </li>
+                <li class="menu-active"><a href="/"
+                    style="font-size: 15px; font-weight: 800;">Home</a></li>
+                <li class="menu-active"><a href="/" style="font-size: 15px">
+                    &nbsp&nbsp&nbsp </a>
+                </li>
+                <li><a href="{% url 'who-are-we' %}" style="font-size: 15px; font-weight: 800;">Who We
+                    Are</a>
+                </li>
+                <li class="menu-active"><a href="index.html" style="font-size: 15px">
+                    &nbsp&nbsp&nbsp </a>
+                </li>
+                <li class="menu-has-children">
+                    <a href=""
+                        style="font-size: 15px; font-weight: 800;">Find Tuition</a>
+                    <ul>
+                        <li><a href="{% url 'schedules' %}?class_type=1&medium=2" style="font-size: 15px"> For Local Scheme Sinhala
+                            Medium</a>
+                        </li>
+                        <li><a href="{% url 'schedules' %}?class_type=1&medium=1" style="font-size: 15px">For Local Scheme English
+                            Medium</a>
+                        </li>
+                        <li><a href="{% url 'schedules' %}?class_type=2" style="font-size: 15px">For International Scheme
+                            </a>
+                        </li>
+                        <li><a href="{% url 'schedules' %}?class_type=3" style="font-size: 15px">Other Courses</a></li>
+                    </ul>
+                </li>
+                <li class="menu-active"><a href="index.html" style="font-size: 15px">
+                    &nbsp&nbsp&nbsp </a>
+                </li>
+                <li><a href="{% url 'contact-us' %}" style="font-size: 15px; font-weight: 800;">Contact For
+                    More</a>
+                </li>
+                <li><a href="{% url 'register-as-a-teacher' %}" style="font-size: 15px; font-weight: 800;">Register as a teacher</a>
+                </li>
+
+                <li class="menu-active"><a href="index.html" style="font-size: 15px">
+                    &nbsp&nbsp&nbsp </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="margin-top:127px">
+        {% block contents %} {% endblock %}
+    </div>
+
+
+    <footer class="bg-light text-center text-lg-start mt-3">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            <div>
+                Web Solution by Kaushini Ekanayake.
+            </div>
+            <div>
+                Copyright © 2022 All rights reserved by
+                <a class="text-dark" href="https://tuitionasisitant.Com/">TuitionAsisitant.Com</a>
+            </div>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+
+
+</body>
+
+</html>

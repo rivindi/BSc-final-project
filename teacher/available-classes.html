@@ -1,0 +1,48 @@
+{% extends 'teacher/base-listing.html' %}
+
+
+{% block left_sidebar %}
+{% include 'template-parts/filtering.html' %}
+{% endblock %}
+
+{% block right_sidebar %}
+<h3>
+    <span class="material-icons">
+    verified
+    </span>
+    Available Classes
+</h3>
+
+<table class="table table-striped mt-4">
+    <thead>
+        <tr>
+        <th scope="col">Teacher</th>
+        <th scope="col">Subject</th>
+        <th scope="col">Grade</th>
+        <th scope="col">Teacher's Rating</th>
+        <th scope="col">View Profile</th>
+        <th scope="col">Class Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for result in results %}
+        <tr>
+            <th scope="row">{{result.teacher.name}}</th>
+            <th scope="row">{{result.subject.name}}</th>
+            <th scope="row">{{result.grade.name}}</th>
+            <td>⭐ {{result.teacher.average_rating}}</td>
+            <td>
+                <a href="{% url 'teacher-profile' result.teacher.id %}">
+                    <button class="btn btn-link">View Profile</button>
+                </a>
+            </td>
+            <td>
+                <a href="{% url 'schedule-details' result.id  %}">
+                    <button class="btn btn-primary">Class details</button></td>
+                </a>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+{% endblock %}

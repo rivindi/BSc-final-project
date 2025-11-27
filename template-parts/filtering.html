@@ -1,0 +1,74 @@
+<h3 class="mb-4">
+    <span class="material-icons">
+    filter_list
+    </span>
+    Filter Results</h3>
+
+<form action="">
+    <div class="single-filter-container form-group">
+        <label for="grade">Grade:</label>
+
+        <select class="form-control" name="grade" id="grade">
+            <option value="">Select Grade</option>
+
+            {% for grade in grades %}
+                <option value="{{grade.id}}" {% if request.GET.grade == grade.id|stringformat:"i" %} selected {% endif %}>{{grade.name}}</option>
+            {%  endfor %}
+        </select>
+    </div>
+
+
+    <div class="single-filter-container form-group">
+        <label for="subject">Subject:</label>
+
+        <select class="form-control" name="subject" id="subject">
+            <option value="">Select Subject</option>
+            {% for subject in subjects %}
+                <option value="{{subject.id}}" {% if request.GET.subject == subject.id|stringformat:"i" %} selected {% endif %}>{{subject.name}}</option>
+            {%  endfor %}
+        </select>
+    </div>
+
+    <div class="single-filter-container form-group">
+        <label for="province">Province:</label>
+
+        <select class="form-control" name="province" id="province">
+            <option value="">Select Province</option>
+            {% for province in provinces %}
+                <option value="{{province.id}}" {% if request.GET.province == province.id|stringformat:"i" %} selected {% endif %}>{{province.name}}</option>
+            {%  endfor %}
+        </select>
+    </div>
+
+
+    <div class="single-filter-container form-group">
+        <label for="education_qualification">Education Qualification:</label>
+
+        <select class="form-control" name="education_qualification" id="education_qualification">
+            <option value="">Select Education Qualification</option>
+            {% for education_qualification in education_qualifications %}
+                <option value="{{education_qualification.id}}" {% if request.GET.education_qualification == education_qualification.id|stringformat:"i" %} selected {% endif %}>{{education_qualification.name}}</option>
+            {%  endfor %}
+        </select>
+    </div>
+
+    <div class="single-filter-container form-group">
+        <label for="experience_years">Minimum Experience:</label>
+
+        <select class="form-control" name="min_experience_years" id="min_experience_years">
+            <option value="">Select Minimum Experience</option>
+            
+            {% for i in experience_years %}
+                <option value="{{i}}" {% if request.GET.min_experience_years == i|stringformat:"i" %} selected {%endif%} {% if request.GET.experience_years == i %} selected {% endif %}>{{i}} {% if i == 1 %}Year{%else%}Years{%endif%}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <input type="hidden" name="class_type" value="{{request.GET.class_type}}">
+    <input type="hidden" name="medium" value="{{request.GET.medium}}">
+
+
+    
+
+    <input class="btn btn-primary" type="submit" value="Apply Filters">
+</form>

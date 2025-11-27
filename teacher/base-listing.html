@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<div class="container-fluid mt-4" style="padding-top: 15px;">
+    <div class="row">
+        <div class="col-2">
+            {% block left_sidebar %}
+            {% endblock %}
+        </div>
+        <div class="col-10">
+            {% block right_sidebar %}
+            {% endblock %}
+
+            
+        </div>
+    </div>
+</div>
+{% endblock %}

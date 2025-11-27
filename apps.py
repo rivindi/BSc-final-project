@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class FindteacherConfig(AppConfig):
+class TeacherConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'findteacher'
+    name = 'teacher'

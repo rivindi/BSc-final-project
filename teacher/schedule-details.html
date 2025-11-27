@@ -1,0 +1,135 @@
+{% extends 'teacher/base-listing.html' %}
+
+{% load static %}
+
+{% block right_sidebar %}
+<style>
+    .profile-details-group .label{
+        font-size: 1.3em;
+    }
+
+    .schedule-details-container > div{
+        min-width: 33.33333%;
+    }
+</style>
+
+<button class="btn btn-outline-secondary mb-4 d-flex" onclick="history.back()">
+    <span class="material-icons">arrow_back</span> Go Back</button>
+
+<h3 class="mb-3">
+    <span class="material-icons">account_circle</span>
+    Class Details
+</h3>
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="schedule-details-container col-12 d-flex flex-wrap">
+            <div class="mb-3 profile-details-group">
+                <div class="label font-weight-bold">
+                    Subject
+                </div>
+                <div>
+                    {{schedule.subject.name}}
+                </div>
+            </div>
+
+            <div class="mb-3 profile-details-group">
+                <div class="label font-weight-bold">
+                    Grade
+                </div>
+                <div>
+                    {{schedule.grade.name}}
+                </div>
+            </div>
+
+
+            <div class="mb-3 profile-details-group">
+                <div class="label font-weight-bold">
+                    Place
+                    
+                    
+                </div>
+                <div>
+                    {% if schedule.held_online %}
+                        Online Delivery
+                    {% else %}
+                        {% if schedule.place %}
+                            {{schedule.place}}
+
+                            {% if schedule.district.name %}
+                                ,{{schedule.district}}
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+
+
+
+            <div class="mb-3 profile-details-group">
+                <div class="label font-weight-bold">
+                    Day of the Week
+                </div>
+                <div>
+                    {{schedule.day}}
+                </div>
+            </div>
+
+
+            <div class="mb-3 profile-details-group">
+                <div class="label font-weight-bold">
+                    Starting Time
+                </div>
+                <div class="text-capitalize">
+                    {{schedule.from_time|date:'f A'}}
+                </div>
+            </div>
+
+
+            <div class="mb-3 profile-details-group">
+                <div class="label font-weight-bold">
+                    Ending Time
+                </div>
+                <div class="text-capitalize">
+                    {{schedule.to_time|date:'f A'}}
+                </div>
+            </div>
+
+            <div class="mb-3 profile-details-group">
+                <div class="label font-weight-bold">
+                    Teacher
+                </div>
+                <div>
+                    {{schedule.teacher.name}} <a href="{% url 'teacher-profile' schedule.teacher.id %}">(View Profile)</a>
+                </div>
+            </div>
+
+            <div class="mb-3 profile-details-group">
+                <div class="label font-weight-bold">
+                    Teaching Medium
+                </div>
+                <div>
+                    {{schedule.medium.name}}
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+    <div class="row d-none">
+        <div class="col-12">
+            <h3 class="mt-3">Rate {{teacher.name}}</h3>
+        </div>
+
+        <div class="text-danger">
+            NOT IMPLEMENTED YET
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
